@@ -5,8 +5,8 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   const entries = new FormData(event.target);
   const { dividend, divider } = Object.fromEntries(entries);
-  result.innerText = dividend / divider;
-  
+  // result.innerText = dividend / divider; - This line will divide strings , not numbers
+
   try {
   // Calculate answers without decimal
   const answer = Math.floor(dividend / divider)
