@@ -7,3 +7,11 @@ form.addEventListener("submit", (event) => {
   const { dividend, divider } = Object.fromEntries(entries);
   result.innerText = dividend / divider;
 });
+
+try {
+  // Calculate answers without decimal
+  const answer = Math.floor(dividend / divider)
+
+  // Display the answer
+  result.innerText = answer;
+}
