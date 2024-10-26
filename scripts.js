@@ -8,12 +8,6 @@ form.addEventListener("submit", (event) => {
   // result.innerText = dividend / divider; - This line will divide strings , not numbers
 
   try {
-  // Calculate answers without decimal
-  const answer = Math.floor(dividend / divider)
-
-  // Display the answer
-  result.innerText = answer;
-
   // Convert input to floats ( converts strings to floating point numbers)
   const floatDividend = parseFloat(dividend);
   const floatDivider = parseFloat(divider);
