@@ -15,7 +15,7 @@ form.addEventListener("submit", (event) => {
   // Logic to check if inputs are valid
 
   // Check if inputs are present
-  if (!floatDividend || !floatDivider){
+  if (isNaN(floatDividend) || isNaN(floatDivider)){
     result.classList.add("error-message")
     result.innerText = "Please enter both dividend and divider"
     throw new Error("Please enter valid numbers");
