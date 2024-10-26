@@ -19,5 +19,17 @@ try {
   const floatDividend = parseFloat(dividend);
   const floatDivider = parseFloat(divider);
 
-  
-}
+  // Logic to check if inputs are valid
+
+  // Check if inputs are present
+  if (!floatDividend ||  !floatDivider) {
+    result.classList.add("error-message")
+    result.innerText = "Please enter both dividend and divider"
+    throw new Error("Please enter valid numbers");
+  } else if (floatDivider === 0){
+    // If divider value is 0, answer is undefined
+    result.classList.add("error-message")
+    result.innerText = "Cannot divide by zero"
+    throw new Error("Cannot divide by zero");
+  }
+} 
