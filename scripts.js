@@ -7,10 +7,15 @@ form.addEventListener("submit", (event) => {
   const { dividend, divider } = Object.fromEntries(entries);
   // result.innerText = dividend / divider; - This line will divide strings , not numbers
 
+  // Clear previous results
+  result.innerText = ""
+  result.classList.remove("error-message")
+
   try {
   // Convert input to floats ( converts strings to floating point numbers)
-  const floatDividend = parseFloat(dividend);
-  const floatDivider = parseFloat(divider);
+  // Trims the input to ensure whitespace and trailing spaces do not cause problems
+  const floatDividend = parseFloat(dividend.trim());
+  const floatDivider = parseFloat(divider.trim());
 
   // Logic to check if inputs are valid
 
@@ -18,15 +23,20 @@ form.addEventListener("submit", (event) => {
   if (isNaN(floatDividend) || isNaN(floatDivider)){
     result.classList.add("error-message")
     result.innerText = "Please enter both dividend and divider"
-  } else if (floatDivider === 0){
+    return // ends the function execution
+  }
+
+  if (floatDivider === 0){
     // If divider value is 0, answer is undefined
     result.classList.add("error-message")
     result.innerText = "Cannot divide by zero"
-  } else {
-    // If inputs are valid, display the answer and remove error message class
-    result.classList.remove("error-message")
-    result.innerText = (floatDividend / floatDivider).toFixed(2) // Removed math.floor usage because it rounds down the number
-  }
+    return // ends the function execution
+  } 
+
+  // If inputs are valid, display the answer and remove error message class
+  result.classList.remove("error-message")
+  result.innerText = (floatDividend / floatDivider).toFixed(2) // Removed math.floor usage because it rounds down the number
+
 } catch  (error) {
   // Catch any errors during execution
   console.error("An error occured:",error.message)
