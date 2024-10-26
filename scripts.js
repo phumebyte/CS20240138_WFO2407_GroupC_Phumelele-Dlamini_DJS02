@@ -30,7 +30,7 @@ form.addEventListener("submit", (event) => {
     result.classList.add("error-message")
     result.innerText = "Cannot divide by zero"
     throw new Error("Cannot divide by zero");
-  } else if(floatDividend.match(/[^0-9]/) || floatDivider.match(/[^0-9]/)){
+  } else if(dividend.match(/[^0-9]/) || divider.match(/[^0-9]/)){
     // If inputs contain non-numeric characters, answer is undefined
     result.classList.add("error-message")
     result.innerText = "Please enter valid numbers"
