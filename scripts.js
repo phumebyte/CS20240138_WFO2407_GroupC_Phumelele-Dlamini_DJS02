@@ -31,7 +31,9 @@ form.addEventListener("submit", (event) => {
   }
 } catch  (error) {
   // Catch any errors during execution
-  console.error(error.stack);
+  console.error("An error occured:",error.message);
+  result.classList.add("error-message")
+  result.innerText = "An unexpected error occured. Please try again."
 }
 });
 
