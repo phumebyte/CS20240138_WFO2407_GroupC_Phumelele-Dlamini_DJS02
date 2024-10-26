@@ -38,7 +38,7 @@ form.addEventListener("submit", (event) => {
   } else {
     // If inputs are valid, display the answer and remove error message class
     result.classList.remove("error-message")
-    result.innerText = floatDividend / floatDivider;
+    result.innerText = Math.floor(floatDividend / floatDivider);
   }
 } catch  (error) {
   // Catch any errors during execution
