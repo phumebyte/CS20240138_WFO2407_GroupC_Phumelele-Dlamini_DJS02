@@ -14,4 +14,10 @@ try {
 
   // Display the answer
   result.innerText = answer;
+
+  // Convert input to floats ( converts strings to floating point numbers)
+  const floatDividend = parseFloat(dividend);
+  const floatDivider = parseFloat(divider);
+
+  
 }
