@@ -36,6 +36,10 @@ try {
     result.classList.add("error-message")
     result.innerText = "Please enter valid numbers"
     throw new Error("Please enter valid numbers");
+  } else {
+    // If inputs are valid, display the answer and remove error message class
+    result.classList.remove("error-message")
+    result.innerText = floatDividend / floatDivider;
   }
 } catch  (error) {
   // Catch any errors during execution
