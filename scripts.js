@@ -32,4 +32,7 @@ try {
     result.innerText = "Cannot divide by zero"
     throw new Error("Cannot divide by zero");
   }
-} 
+} catch  (error) {
+  // Catch any errors during execution
+  console.error(error.stack);
+}
