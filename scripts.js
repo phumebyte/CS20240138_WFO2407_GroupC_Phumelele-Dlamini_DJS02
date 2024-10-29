@@ -42,7 +42,7 @@ form.addEventListener("submit", (event) => {
 
   // If inputs are valid, display the answer and remove error message class
   result.classList.remove("error-message")
-  result.innerText = Math.floor(floatDividend / floatDivider) // Removed math.floor usage because it rounds down the number
+  result.innerText = Math.floor(floatDividend / floatDivider) //math.floor usage because it rounds down the number
 
 } catch  (error) {
   // Catch any errors during execution
