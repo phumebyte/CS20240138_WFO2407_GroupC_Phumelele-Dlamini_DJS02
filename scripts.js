@@ -33,6 +33,13 @@ form.addEventListener("submit", (event) => {
     return // ends the function execution
   } 
 
+  if(dividend.match(/[^0-9]/) || divider.match(/[^0-9]/)){
+    // If inputs contain non-numeric characters, answer is undefined
+    result.classList.add("error-message")
+    result.innerText = "Please enter valid numbers"
+    return // ends the function execution
+  }
+
   // If inputs are valid, display the answer and remove error message class
   result.classList.remove("error-message")
   result.innerText = (floatDividend / floatDivider).toFixed(2) // Removed math.floor usage because it rounds down the number
