@@ -21,7 +21,7 @@ form.addEventListener("submit", (event) => {
 
   // Check if inputs are present
   if (isNaN(floatDividend) || isNaN(floatDivider)){
-    result.classList.add("error-message")
+    result.classList.add("critical-error")
     result.innerText = "Please enter both dividend and divider correctly"
     return // ends the function execution
   }
