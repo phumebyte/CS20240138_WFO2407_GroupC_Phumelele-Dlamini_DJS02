@@ -33,7 +33,7 @@ form.addEventListener("submit", (event) => {
     return // ends the function execution
   } 
 
-  if(dividend.match(/[^0-9]/) || divider.match(/[^0-9]/)){
+  if(dividend.trim().match(/[^0-9]/) || divider.trim().match(/[^0-9]/)){
     // If inputs contain non-numeric characters, answer is undefined
     result.classList.add("error-message")
     result.innerText = "Please enter valid numbers"
